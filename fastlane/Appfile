@@ -1,0 +1,8 @@
+# iOS
+app_identifier "ca.gnb.distancenb"
+apple_id "OCIOAppDev@gnb.ca"
+
+team_id "12345"
+
+package_name "ca.gnb.distancenb"
+json_key_file ""

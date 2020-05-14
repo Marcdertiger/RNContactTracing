@@ -1,0 +1,71 @@
+{
+   "__Comment1": "Misc",
+
+   "cancel": "Cancel",
+   "welcome": "Welcome",
+   "apiTesting": "API Testing",
+   "noItems": "No Items",
+   "search": "Search",
+   "french": "French",
+   "english": "English",
+   "shareTheApp": "Share the app",
+   "next": "Next",
+   "back": "Back",
+   "skip": "Skip",
+   "close": "Close",
+   "privacyPolicyButtonText": "View privacy policy",
+   "privacy": "Privacy",
+   "privacyPolicyTitle": "Privacy policy",
+   "termsOfUseTitle": "Terms of use",
+   "gnb": "GNB",
+   "more": "More",
+   "help": "Help",
+
+
+   "__Comment2": "Onboarding",
+
+   "yourChoice": "English or French - It's your choice!",
+   "howItWorks": "How it works",
+   "weProtectYourPrivacy" : "We protect your privacy",
+   "weProtectYourPrivacyIntroMessage": "Wes don't collect information about your identity. We don't track your location using GPS. Test results are anonymous and only submitted with your consent.",
+   "apiUseTitle": "We use Bluetooth to log interactions, anonymously",
+   "apiUseMessage": "When your phone is near another phone using this app, they use Bluetooth to talk to each other. They exchange anonymous interaction IDs that contain no info about your identity or location.",
+   "exposureAlertTitle": "We alert you of potential exposure",
+   "exposureAlertMessage": "If a DistanceNB app user anonymously notifies others of a positive COVID-19 test result, phones they have exchanged anonymous interaction IDs with will be notified of potential exposure.",
+   "togetherAcceptTermsTitle": "Together, we can help prevent the spread of COVID-19",
+   "togetherAcceptTermsMessage": "Thank you for helping New Brunswick stay safe, anonymously.",
+   "letsGetStarted": "Let's get started!",
+   "togetherAcceptTermsCheckboxMessage": "I agree to the terms of use and privacy policy",
+   "termsOfUseModalTitle": "Terms of use and privacy policy",
+
+
+   "__Comment3": "Setup",
+
+   "setupAppSectionTitle": "Setup App",
+   "turnOnBluetooth": "Turn on bluetooth",
+   "bluetoothSetupBody": "This will allow Bluetooth to talk to other DistanceNB app users. None of your personal information is shared.",
+   "allowBluetooth": "Allow bluetooth", 
+   "bluetoothTermsMessage": "This is required for the app to work",
+   "turnOnNotifications": "Enable notifications",
+   "notificationsSetupBody": "This will allow us to send you anonymous notifications of your potential exposure to COVID-19.",
+   "allowNotifications": "Allow notifications", 
+   "notificationsTermsMessage": "If you change your mind this setting can be configured anytime in Settings",
+   "notificationsAllowErrorMessage": "There has been an error please try again",
+
+
+   "__Comment4": "Home",
+   "shareTheAppMessage": "Help your community stay safe by sharing the app with your family and friends.",
+   "homeNoExposureMessage": "DistanceNB has not detected exposure to COVID-19",
+   "homeExposureMessage": "DistanceNB has detected exposure to COVID-19",
+   "testedPositiveButton": "Anonymously notify others",
+   "testedPositiveTitle": "Tested Positive for COVID-19?",
+   "enterYourCodeTitle": "Enter your code",
+   "enterYourCodeBody": "If you test positive for COVID-19 you will receive a 4-character code from a public health nurse. \n\nEnter this code below to notify others that they may have been exposed to COVID-19.",
+   "didNotReceiveCode" : "I didn't receive my code",
+   "thankYou!": "Thank You!",
+   "thankYouMessageAfterCodeSubmission":"Thank you for helping New Brunswicker's stay safe. Together we can help prevent the spread of COVID-19.",
+  
+   "__Comment5": "Privacy",
+   "privacyTabTitle":"Your privacy is important to us"
+}
+

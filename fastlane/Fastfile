@@ -1,0 +1,80 @@
+fastlane_version '2.142.0'
+
+# This fixes new itc issue?
+ENV["DELIVER_ITMSTRANSPORTER_ADDITIONAL_UPLOAD_PARAMETERS"] = "-t DAV"
+
+TEMP_KEYCHAIN_NAME = SecureRandom.hex(10)
+TEMP_KEYCHAIN_PASSWORD = ENV['MATCH_KEYCHAIN_PASSWORD']
+
+ENVIRONMENT_FLAG = ENV['BUILD_ENVIRONMENT']
+PROD_TAG = 'release'
+SECRETS_DIR = "/Users/build-user/ci/secrets"
+envFile = "#{SECRETS_DIR}/distancenb/#{ENVIRONMENT_FLAG}.env.js"
+resultingEnvFile = "../App/Env/env.js";
+
+ANDROID_APK_DIR = "android/app/build/outputs/apk"
+IOS_IPA_DIR = "ios"
+
+credentials_repo = ENV['FASTLANE_CREDENTIALS_REPOSITORY']
+apple_id = ENV['FASTLANE_USERNAME']
+app_name = "DistanceNB"
+
+
+private_lane :before_build do
+    yarn(
+        command: "install",
+        package_path: "package.json"
+    )
+end
+
+
+before_all do
+    clear_derived_data
+    @fastlane_dir = File.expand_path(File.dirname(__FILE__))
+    # Create a temporary keychain to avoid issues with logged in user not matching apple developer user
+    create_keychain(
+        name: TEMP_KEYCHAIN_NAME,
+        unlock: true,
+        timeout: false,
+        lock_when_sleeps: true,
+        password: TEMP_KEYCHAIN_PASSWORD
+    )
+    # Copy right environment file for the BUILD_ENVIRONMEN to the project
+    do_copy_envfile
+end
+
+private_lane :do_copy_envfile do
+    cp_str = "cp #{envFile} #{resultingEnvFile}"
+    sh(cp_str)
+end
+
+after_all do
+    remove_temp_keychain
+end
+
+private_lane :remove_temp_keychain do
+    delete_keychain(name: TEMP_KEYCHAIN_NAME)
+end
+
+error do
+    remove_temp_keychain
+end
+
+platform :ios do
+end
+
+platform :android do
+
+    lane :build_debug do
+        build_android(buildType: 'debug')
+    end
+
+
+    private_lane :build_android do |options|
+        # Do yarn
+        before_build
+        gradle(task: 'clean', project_dir: 'android/')
+        gradle(task: 'assemble', build_type: options[:buildType],  project_dir: 'android/')
+    end
+
+end
