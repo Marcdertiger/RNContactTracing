@@ -1,5 +1,6 @@
 #  DistanceNB
 
+An incomplete proof of concept contact tracing cross platform mobile application.
 
 ## Notes
 
